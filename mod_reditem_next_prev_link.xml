@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>redITEM next/previous link</name>
+    <author>Steffen</author>
+    <version>1.0.0</version>
+    <description>Creates a link for inserting next and previous links on a reditem item based on a sorting option.</description>
+    <files>
+        <filename>mod_reditem_next_prev_link.xml</filename>
+        <filename module="mod_reditem_next_prev_link">mod_reditem_next_prev_link.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.mod_reditem_next_prev_link.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_reditem_next_prev_link.sys.ini</language>
+        <language tag="da-DK">language/da-DK/da-DK.mod_reditem_next_prev_link.ini</language>
+        <language tag="da-DK">language/da-DK/da-DK.mod_reditem_next_prev_link.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="ricategory"
+                    type="sql"
+                    default="1"
+                    label="MOD_REDITEM_NEXT_PREV_LINK_CATEGORY_LABEL"
+                    description="MOD_REDITEM_NEXT_PREV_LINK_CATEGORY_DESC"
+                    query="SELECT id AS id, title FROM #__reditem_categories"
+                    key_field="id"
+                    value_field="title" />
+                <field
+                    name="risort"
+                    type="text"
+                    label="MOD_REDITEM_NEXT_PREV_LINK_SORT_LABEL"
+                    description="MOD_REDITEM_NEXT_PREV_LINK_SORT_DESC" />
+                <field
+                    name="urloptions"
+                    type="text"
+                    label="MOD_REDITEM_NEXT_PREV_LINK_URLOPTIONS_LABEL"
+                    description="MOD_REDITEM_NEXT_PREV_LINK_URLOPTIONS_DESC" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
